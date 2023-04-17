@@ -22,3 +22,14 @@ repos:
       - id: fix-byte-order-marker
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
+  - repo: git@github.com:seoklab/shared-hooks.git
+    rev: 0dc4a6e52f5a53995835b900d187211ac317e59a
+    hooks:
+      - id: commitlint
+default_install_hook_types:
+  - pre-commit
+  - pre-push
+  - commit-msg
+default_stages:
+  - pre-commit
+  - pre-push
