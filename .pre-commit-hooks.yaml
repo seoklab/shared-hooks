@@ -1,0 +1,13 @@
+#
+# .pre-commit-hooks.yaml - Shared Hooks
+#
+# Copyright (c) 2023 SNU Compbio Lab.
+#
+# SPDX-License-Identifier: MIT
+#
+- id: commitlint
+  name: linting commit message
+  entry: bin/commitlint.sh
+  language: script
+  always_run: true
+  stages: [commit-msg]
