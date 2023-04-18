@@ -23,7 +23,7 @@ repos:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
   - repo: git@github.com:seoklab/shared-hooks.git
-    rev: 0dc4a6e52f5a53995835b900d187211ac317e59a
+    rev: v0.1.1
     hooks:
       - id: commitlint
 default_install_hook_types:
