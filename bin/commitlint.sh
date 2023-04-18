@@ -42,6 +42,12 @@ if [[ ! -x "$CL_BIN" ]]; then
 	exit 1
 fi
 
-sed '/# ------------------------ >8 ------------------------/q' "$1" |
-	grep -v '^#' |
-	exec "$CL_BIN" -V
+msg="$(sed '/# ------------------------ >8 ------------------------/q' "$1" |
+	grep -v '^#')"
+
+if [[ "$msg" =~ ^[[:space:]]*$ ]]; then
+	echo 'Aborting commit due to empty commit message.'
+	exit 1
+fi
+
+exec "$CL_BIN" -V <<<"$msg"
