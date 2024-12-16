@@ -11,3 +11,8 @@
   language: script
   always_run: true
   stages: [commit-msg]
+
+- id: only-ascii
+  name: check if files contain only ASCII characters
+  entry: bin/only-ascii.sh
+  language: script
