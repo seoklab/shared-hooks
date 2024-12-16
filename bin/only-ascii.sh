@@ -1,7 +1,14 @@
 #!/bin/bash
 
+ref_args=()
+if [[ -n $PRE_COMMIT_FROM_REF && -n $PRE_COMMIT_TO_REF ]]; then
+	ref_args=("$PRE_COMMIT_FROM_REF...$PRE_COMMIT_TO_REF")
+else
+	ref_args=(HEAD)
+fi
+
 non_ascii="$(
-	git diff HEAD -- "$@" |
+	git diff "${ref_args[@]}" -- "$@" |
 		grep '^+[^+]' |
 		tr -d '\011\012\015\040-\176'
 )"
