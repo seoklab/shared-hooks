@@ -3,7 +3,7 @@
 non_ascii="$(
 	git diff HEAD -- "$@" |
 		grep '^+[^+]' |
-		tr -d "\011\012\015\040-\176"
+		tr -d '\011\012\015\040-\176'
 )"
 
 if [[ -z $non_ascii ]]; then
