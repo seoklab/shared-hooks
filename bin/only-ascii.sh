@@ -2,7 +2,7 @@
 
 ref_args=()
 if [[ -n $PRE_COMMIT_FROM_REF && -n $PRE_COMMIT_TO_REF ]]; then
-	ref_args=("$PRE_COMMIT_FROM_REF...$PRE_COMMIT_TO_REF")
+	ref_args=("$PRE_COMMIT_FROM_REF..$PRE_COMMIT_TO_REF")
 else
 	ref_args=(HEAD)
 fi
