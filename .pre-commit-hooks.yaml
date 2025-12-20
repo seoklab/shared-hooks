@@ -8,14 +8,14 @@
 - id: commitlint
   name: linting commit message
   entry: bin/commitlint.sh
-  language: script
+  language: unsupported_script
   always_run: true
   stages: [commit-msg]
 
 - id: only-ascii
   name: check if files contain only ASCII characters
   entry: bin/only-ascii.sh
-  language: script
+  language: unsupported_script
 
 - id: forbid-merge
   name: forbid merge commits
